@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"pcheng/learngo/.idea/tree"
+	"pcheng/palywithGo/tree"
 )
 
 func main() {
@@ -29,8 +29,8 @@ func main() {
 	pRoot.SetValue(100)
 	pRoot.PrintNode()
 
-	nodeSlice := []tree.Node {
-		{Value:-1},
+	var nodeSlice = []tree.Node{
+		{Value: -1},
 		{},
 		{10, nil, &root},
 	}
