@@ -37,3 +37,4 @@ func main() {
 	fmt.Println(nodeSlice)
 	fmt.Println(root)
 }
+
