@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"pcheng/palywithGo/queue"
+	"pcheng/playwithGo/queue"
 )
 
 func main() {

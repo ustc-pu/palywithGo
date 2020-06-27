@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"pcheng/palywithGo/tree"
+	"pcheng/playwithGo/tree"
 )
 
 type myTreeNode struct{
