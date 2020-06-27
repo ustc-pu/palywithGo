@@ -5,11 +5,27 @@ import (
 	"pcheng/palywithGo/tree"
 )
 
+type myTreeNode struct{
+	node *tree.Node
+}
+
+func (aNode *myTreeNode) postOrder() {
+	if aNode.node == nil || aNode == nil {
+		return
+	}
+
+	left := myTreeNode{aNode.node.Left}
+	right := myTreeNode{aNode.node.Right}
+	left.postOrder()
+	right.postOrder()
+	aNode.node.PrintNode()
+}
+
 func main() {
 	var root = tree.Node{}
 	root = tree.Node{Value:3}
 	root.Left = &tree.Node{}
-	root.Right = &tree.Node{9, nil, nil}
+	root.Right = &tree.Node{Value: 9}
 	root.Right.Left = new(tree.Node)
 	root.Left.Right = tree.CreateNode(1)
 
@@ -22,19 +38,21 @@ func main() {
 	root.SetValue(4)
 	root.Traverse()
 	fmt.Println()
+	myNode := myTreeNode{&root}
+	myNode.postOrder()
 	//
-	var pRoot = &tree.Node{}
-	pRoot.SetValue(10)
-	pRoot = &root
-	pRoot.SetValue(100)
-	pRoot.PrintNode()
-
-	var nodeSlice = []tree.Node{
-		{Value: -1},
-		{},
-		{10, nil, &root},
-	}
-	fmt.Println(nodeSlice)
-	fmt.Println(root)
+	//var pRoot = &tree.Node{}
+	//pRoot.SetValue(10)
+	//pRoot = &root
+	//pRoot.SetValue(100)
+	//pRoot.PrintNode()
+	//
+	//var nodeSlice = []tree.Node{
+	//	{Value: -1},
+	//	{},
+	//	{10, nil, &root},
+	//}
+	//fmt.Println(nodeSlice)
+	//fmt.Println(root)
 }
 
