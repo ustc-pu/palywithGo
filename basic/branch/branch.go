@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	const filename = "abc.txt"
+	const filename = "basic/branch/abc.txt"
 	contents, err := ioutil.ReadFile(filename)
 	if(err != nil) {
 		fmt.Println(err)
@@ -27,25 +27,25 @@ func main() {
 func calculator(a, b int, op string) int {
 	var res int
 	switch op {
-	case "+" : res = a + b;
-	case "-" : res = a - b;
-	case "*" : res = a * b;
-	case "/" : res = int((float64(a)/float64(b)));
+	case "+" : res = a + b
+	case "-" : res = a - b
+	case "*" : res = a * b
+	case "/" : res = int(float64(a) / float64(b))
 	default:
-		panic("unsupported operator: " + op);
+		panic("unsupported operator: " + op)
 	}
-	return res;
+	return res
 }
 
 func scoreToLetter(score int) string {
-	var letterGrade string;
+	var letterGrade string
 	switch {
 	case score < 0 || score > 100:
-		panic(fmt.Sprintf("wrong score: %d", score));
-	case score < 60: letterGrade = "F";
-	case score < 80: letterGrade = "C";
-	case score < 90: letterGrade = "B";
-	case score <= 100: letterGrade = "A";
+		panic(fmt.Sprintf("wrong score: %d", score))
+	case score < 60: letterGrade = "F"
+	case score < 80: letterGrade = "C"
+	case score < 90: letterGrade = "B"
+	case score <= 100: letterGrade = "A"
 	}
 	return letterGrade;
 }

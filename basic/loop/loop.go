@@ -12,7 +12,8 @@ func main() {
 		intToBin(5),
 		intToBin(32),
 		)
-	printFile("abc.txt");
+	const fileName = "basic/loop/abc.txt"
+	printFile(fileName)
 	//forever()
 }
 
