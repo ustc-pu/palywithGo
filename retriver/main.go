@@ -40,6 +40,11 @@ func session(s RetrieverPoster) string {
 	return s.Get(url)
 }
 
+
+/*
+this is how we declare an interface
+and implement the interface
+*/
 type fakeType struct {
 
 }
