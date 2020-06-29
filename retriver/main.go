@@ -74,12 +74,14 @@ func main() {
 }
 
 func inspect(r Retriever) {
-	fmt.Printf("%T, %v\ntype switch:\n", r, r)
+	fmt.Println("Inspecting:")
+	fmt.Printf("> %T, %v\n", r, r)
+	fmt.Printf("> type switch: ")
 	switch v := r.(type) {
 	case *mock.Retrieve:
-		fmt.Println(v.Contents)
+		fmt.Println("Contents:", v.Contents)
 	case *real.Retrieve:
-		fmt.Println("user agent: ", v.UserAgent)
-
+		fmt.Println("user agent:", v.UserAgent)
 	}
+	fmt.Println()
 }

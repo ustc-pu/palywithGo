@@ -1,5 +1,7 @@
 package mock
 
+import "fmt"
+
 type Retrieve struct {
 	Contents string
 }
@@ -18,5 +20,10 @@ func (r *Retrieve) Get(url string) string {
 func (r *Retrieve) Post(url string, form map[string]string) string {
 	r.Contents = form["contents"]
 	return "ok."
+}
+
+//implements Stringer interface
+func (r Retrieve) String() string {
+	return fmt.Sprintf("Retriever: {contents=%s}", r.Contents)
 }
 
